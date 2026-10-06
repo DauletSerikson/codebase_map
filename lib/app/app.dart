@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../ui/home_page.dart';
+import 'project_controller.dart';
 
 class CodebaseMapApp extends StatelessWidget {
-  const CodebaseMapApp({super.key});
+  const CodebaseMapApp({super.key, this.controller});
+
+  final ProjectController? controller;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,7 @@ class CodebaseMapApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
       ),
-      home: const HomePage(),
+      home: HomePage(controller: controller),
     );
   }
 }

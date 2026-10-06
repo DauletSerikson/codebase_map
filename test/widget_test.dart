@@ -13,7 +13,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('placeholder renders at desktop and small window sizes', (
+  testWidgets('start screen renders at desktop and small window sizes', (
     tester,
   ) async {
     addTearDown(() => tester.view.resetPhysicalSize());
@@ -26,10 +26,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(Scaffold), findsOneWidget);
-      expect(
-        find.text('Project scaffold ready.\nSource analysis is coming next.'),
-        findsOneWidget,
-      );
+      expect(find.text('Understand your project.'), findsOneWidget);
       expect(tester.takeException(), isNull);
     }
   });
